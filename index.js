@@ -110,7 +110,7 @@ async function run() {
 
                 res.cookie('adminToken', token, {
                     httpOnly: true,
-                    secure: false,
+                    secure: true,
                     maxAge: 100 * 24 * 60 * 60 * 1000,
                     sameSite: 'lax'
                 })
