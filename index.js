@@ -8,7 +8,7 @@ const app = express()
 const port = 3000
 
 app.use(cors({
-    origin: ['http://localhost:5173'],
+    origin: ['http://localhost:5173','https://campus-lost-found-phi.vercel.app'],
     credentials: true
 }))
 app.use(express.json())
