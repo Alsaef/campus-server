@@ -51,7 +51,7 @@ async function run() {
 
             try {
                 const token = req?.cookies?.adminToken; // cookie থেকে token নেওয়া হচ্ছে
-                
+
                 if (!token) {
                     return res.status(401).send({ message: 'unauthorized access' });
                 }
@@ -112,7 +112,7 @@ async function run() {
                     httpOnly: true,
                     secure: true,
                     maxAge: 100 * 24 * 60 * 60 * 1000,
-                    sameSite: 'lax'
+                    sameSite: 'none'
                 })
 
                 console.log(token);
@@ -242,7 +242,7 @@ async function run() {
                 const { id } = req.params;
                 const update = {
                     $set: {
-                        type:'claimed',
+                        type: 'claimed',
                     }
                 };
                 const result = await lostFoundCollection.updateOne(
